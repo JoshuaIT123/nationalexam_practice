@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const paymentSchema = mongoose.Schema({
           paymentNumber: String,
-          amountPaid:String,
+          amountPaid:Number,
           recordId:{
             type:mongoose.Schema.Types.ObjectId,
             ref:"ServiceRecord"

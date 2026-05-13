@@ -2,13 +2,11 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-import router from './Routes/UserRoutes.js'
-
 import userRoutes from './Routes/UserRoutes.js'
 import PaymentRoutes from './Routes/PaymentRoutes.js'
 import CarRoutes from './Routes/CarRoutes.js'
 import ServiceRoutes from './Routes/ServiceRoutes.js'
-import ServiceRecordRoutes from './Routes/ServiceRecordRoutes.js' 
+import ServiceRecordRoutes from "./Routes/ServiceRecordRoutes.js"
 
 dotenv.config()
 
@@ -16,9 +14,11 @@ dotenv.config()
 const app = express()
 
 //Middlewares
-app.use(cors())
+app.use(cors({
+  origin: true,
+  credentials: true
+}))
 app.use(express.json())
-app.use('/',router)
 app.use('/api/users',userRoutes)
 app.use('/api/payments',PaymentRoutes)
 app.use('/api/cars',CarRoutes)

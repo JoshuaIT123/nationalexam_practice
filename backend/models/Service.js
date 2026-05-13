@@ -6,7 +6,7 @@ const serviceSchema = mongoose.Schema({
         default:"00000"
     },
     serviceName:String,
-    servicePrice:String
+    servicePrice:Number
 },
 {
   timestamps:true
